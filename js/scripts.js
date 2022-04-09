@@ -1,10 +1,14 @@
 $(document).ready(function() {
   $("form#result").submit(function() {
-    event.preventDefault();
-    const language = parseInt($("input#number").val());
-    let result;
-    if (language >10) {
+    const number = parseInt($("input#number").val());
+    const control = 10;
+
+    if (number >= control) {
       $("#csharp").show();
+    } else if (number <= control) {
+      $("#java").show();
     }
+
+    event.preventDefault();
   });
 });
